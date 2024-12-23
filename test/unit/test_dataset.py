@@ -3,7 +3,6 @@ from src.ml.preprocessing.dataset import DocumentDataset
 import torch
 from torchvision import transforms
 import os
-import shutil
 from PIL import Image
 from pathlib import Path
 
