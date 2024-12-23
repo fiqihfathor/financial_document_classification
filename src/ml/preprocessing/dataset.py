@@ -1,10 +1,10 @@
-import torch
 from torch.utils.data import Dataset
+from typing import Optional, Callable, Tuple
 import os
 from PIL import Image
 
 class DocumentDataset(Dataset):
-    def __init__(self, root_dir, transform=None):
+    def __init__(self, root_dir: str, transform: Optional[Callable] = None):
         """
         Initializes the DocumentDataset with the directory containing the images and an optional transform.
 
@@ -27,13 +27,16 @@ class DocumentDataset(Dataset):
         self.labels = []
 
         for label, class_name in enumerate(self.classes):
-            class_dir = os.path.join(self.root_dir, class_name)
+            class_dir = os.path.join(self.root_dir, class_name)            
+            if not os.path.isdir(class_dir):
+                continue
             for image_name in os.listdir(class_dir):
-                image_path = os.path.join(class_dir, image_name)
-                self.image_paths.append(image_path)
-                self.labels.append(label)
+                if image_name.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.gif')):
+                    image_path = os.path.join(class_dir, image_name)
+                    self.image_paths.append(image_path)
+                    self.labels.append(label)
 
-    def __len__(self):
+    def __len__(self)->int:
         """
         Returns the total number of images in the dataset.
 
@@ -42,7 +45,7 @@ class DocumentDataset(Dataset):
         """
         return len(self.image_paths)
 
-    def __getitem__(self, index):
+    def __getitem__(self, index:int)-> Tuple[Image.Image, int]:
         """
         Retrieves the image and its corresponding label at the specified index.
 
@@ -63,3 +66,4 @@ class DocumentDataset(Dataset):
             image = self.transform(image)
 
         return image, label
+    
