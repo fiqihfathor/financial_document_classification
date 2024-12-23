@@ -1,8 +1,6 @@
 import pytest
-from torch.utils.data import DataLoader
 from src.ml.preprocessing.dataloader import get_image_dataloader
-from src.ml.preprocessing.dataset import DocumentDataset
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 @pytest.fixture
 def mock_dataset():
