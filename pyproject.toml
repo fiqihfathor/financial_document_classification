@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "mlflow>=2.19.0",
+    "scikit-learn>=1.6.0",
     "torch==2.5.1+cu121",
     "torchaudio==2.5.1+cu121",
     "torchvision==0.20.1+cu121",
