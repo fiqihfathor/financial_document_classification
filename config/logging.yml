@@ -1,0 +1,13 @@
+handlers:
+  console:
+    class: loguru.logger
+    level: DEBUG
+    format: "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{message}</level>"
+  file:
+    class: loguru.logger
+    level: DEBUG
+    format: "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level}</level> | <cyan>{file}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+    filename: "logs/{time:YYYY-MM-DD}.log"
+    rotation: "1 day"
+    retention: "7 days"
+    compression: "zip"

@@ -1,0 +1,29 @@
+model:
+  batch_size: 16
+  num_epochs: 20
+  model_name: efficientnet-b0
+  architecture: efficientnet
+  pretrained: True
+  dataset_path: ./data/dataset
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  num_classes: 10
+  optimizer:
+    type: adam
+    learning_rate: 0.001
+    weight_decay: 0
+    momentum: 0.9
+  criterion:
+    type: crossentropy
+
+fastapi:
+  host: 0.0.0.0
+  port: 8000
+  model_path: runs:/27a9bacae0634ce6a812899da8a9250f/models/efficientnet-b0_epoch_20
+
+mlflow:
+  tracking_uri: http://localhost:5000
+  experiment_name: document_classification
+
+
