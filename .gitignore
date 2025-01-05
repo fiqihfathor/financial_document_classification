@@ -14,4 +14,17 @@ wheels/
 .venv
 
 # Data
-data/
+data/*
+!data/.gitkeep
+
+# pytest cache
+.pytest_cache/
+
+# mlflow
+mlruns/*
+!mlruns/.gitkeep
+
+#log
+logs/*
+!logs/.gitkeep
+
