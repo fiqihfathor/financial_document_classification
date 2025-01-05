@@ -1,0 +1,70 @@
+site_name: Financial Document Classification
+site_url: https://fiqihfathor.github.io/financial_document_classification/
+site_description: An image-based document classification system using deep learning models.
+repo_url: https://github.com/fiqihfathor/financial_document_classification
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotatation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to Dark Mode
+      primary: indigo
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to Light Mode
+      primary: indigo
+      accent: lime
+nav:
+  - Home: index.md
+  - About: about.md
+  - Getting Started:
+      - Prerequisites: getting_started/prerequisites.md
+      - Setup & Installation: getting_started/setup.md
+  - Usage:
+      - Dataset: usage/dataset.md
+      - Training: usage/training.md
+      - API: usage/api.md
+  - Authors: authors.md
+  - License: license.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://fiqihfathor.github.io/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/fiqih-fathor-rachim/
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+copyright: |
+  &copy; 2025 <a href="https://fiqihfathor.github.io" target="_blank" rel="noopener">Fiqih Fathor Rachim</a>
+
